@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class HomeViewController: UIViewController {
     
@@ -17,11 +18,124 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        activities = createArray()
+
         tableView.delegate = self
         tableView.dataSource = self
         self.navigationController?.navigationBar.tintColor = UIColor.init(red: 57/255, green: 172/255, blue: 217/255, alpha: 1)
+        self.fetchFromCK()
+    }
+    
+    func sortActivities(){
+        self.activities.sort {$0.date < $1.date}
+    }
+    
+    func recordToActivity(record: CKRecord) -> Activity{
+        let name: String = record["name"]!
+        let location: String = record["location"]!
+        let category: String = record["category"]!
+        let date: String = record["date"]!
+        let remainingDays: String = record["remainingDays"]!
+        let image1: String = record["image1"]!
+        let image2: String = record["image2"]!
+        let tempRemainingTask: [String] = record["remainingTask"]!
         
+        var remainingTask: [Task] = []
+        for singleTask in tempRemainingTask{
+            let data: Data = singleTask.data(using: .utf8)!
+            
+            do{
+                let dict: [String:Any] = try JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+                let taskName: String = dict["name"] as! String
+                let taskPic: String = dict["pic"] as! String
+                let taskDescriptions: String = dict["descriptions"] as! String
+                let taskCompleted: Bool = dict["completed"] as! Bool
+                
+                let newTask = Task(name: taskName, pic: taskPic, description: taskDescriptions, completed: taskCompleted)
+                remainingTask.append(newTask)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
+        let newActivity = Activity(name: name, location: location, category: category, date: date, remainingDays: remainingDays)
+        newActivity.remainingTask.append(contentsOf: remainingTask)
+        newActivity.image1 = image1
+        newActivity.image2 = image2
+        return newActivity
+    }
+    
+    func fetchFromCK(){
+        let container = CKContainer.default()
+        let database = container.publicCloudDatabase
+        
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Activity", predicate: predicate)
+        
+        database.perform(query, inZoneWith: nil) { (records, error) in
+            if let err = error{
+                print("Error: \(err.localizedDescription)")
+            }
+            if let fetchedRecords = records{
+                for singleRecord in fetchedRecords{
+                    let activity = self.recordToActivity(record: singleRecord)
+                    self.activities.append(activity)
+                }
+            }
+            DispatchQueue.main.async {
+                self.sortActivities()
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func saveActivityToCK(addedActivity: Activity){
+        let activityRecord = CKRecord(recordType: "Activity")
+        
+        activityRecord["name"] = addedActivity.name
+        activityRecord["location"] = addedActivity.location
+        activityRecord["category"] = addedActivity.category
+        activityRecord["date"] = addedActivity.date
+        activityRecord["remainingDays"] = addedActivity.remainingDays
+        activityRecord["image1"] = addedActivity.image1
+        activityRecord["image2"] = addedActivity.image2
+        
+        var tempTasks: [String] = []
+        for singleTask in addedActivity.remainingTask{
+            var newTaskDict: [String:Any] = [:]
+            
+            newTaskDict["name"] = String(singleTask.name)
+            newTaskDict["pic"] = String(singleTask.pic)
+            newTaskDict["descriptions"] = String(singleTask.descriptions)
+            newTaskDict["completed"] = Bool(singleTask.completed)
+            
+            do{
+                let tempData = try JSONSerialization.data(withJSONObject: newTaskDict, options: .prettyPrinted)
+                let dataString: String = String(bytes: tempData, encoding: .utf8)!
+                tempTasks.append(dataString)
+            } catch {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+        }
+        
+        activityRecord["remainingTask"] = tempTasks
+        
+        // ---------------------------------------------------------------
+        // Save to CK public database
+        
+        let container = CKContainer.default()
+        let database = container.publicCloudDatabase
+        
+        database.save(activityRecord) { (savedRecord, error) in
+            if let err = error{
+                print(err.localizedDescription)
+            }
+            if let _ = savedRecord{
+                //                print(r)
+            }
+        }
+        
+        // ---------------------------------------------------------------
     }
     
     func createArray() -> [Activity]{
@@ -76,10 +190,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
     }
-    
-    func saveActivityToCK(activity: Activity){
-        
-    }
 }
 
 extension HomeViewController: ActivityDataDelegate {
@@ -90,7 +200,8 @@ extension HomeViewController: ActivityDataDelegate {
     
     func addActivity(activity: Activity) {
         activities.append(activity)
-        self.saveActivityToCK(activity: activity)
+        self.sortActivities()
+        self.saveActivityToCK(addedActivity: activity)
         tableView.reloadData()
     }
     

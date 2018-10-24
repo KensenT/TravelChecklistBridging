@@ -113,6 +113,10 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
     }
+    
+    func saveTaskToCK(task: Task){
+        
+    }
 }
 
 extension DetailViewController: TaskDataDelegate {
@@ -128,6 +132,7 @@ extension DetailViewController: TaskDataDelegate {
     
     func addTask(task: Task) {
         activity.remainingTask.append(task)
+        self.saveTaskToCK(task: task)
         viewWillAppear(true)
     }
 }
