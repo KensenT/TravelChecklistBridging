@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FD6F87B218094FA0066B9EA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6F87A218094FA0066B9EA /* FirstViewController.swift */; };
+		2FD6F87E2180950E0066B9EA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6F87D2180950E0066B9EA /* SecondViewController.swift */; };
+		2FD6F8802180951B0066B9EA /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6F87F2180951B0066B9EA /* ThirdViewController.swift */; };
+		2FD6F882218095220066B9EA /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6F881218095220066B9EA /* FourthViewController.swift */; };
+		2FD6F886218095880066B9EA /* Onboarding1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2FD6F883218095870066B9EA /* Onboarding1.mp4 */; };
+		2FD6F887218095880066B9EA /* Onboarding3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2FD6F884218095870066B9EA /* Onboarding3.mp4 */; };
+		2FD6F888218095880066B9EA /* Onboarding2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2FD6F885218095880066B9EA /* Onboarding2.mp4 */; };
 		8596B09F2180679400DC96A4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8596B09E2180679400DC96A4 /* CloudKit.framework */; };
 		BA5A70DF2091DC9500110EDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A70DE2091DC9500110EDA /* AppDelegate.swift */; };
 		BA5A70E12091DC9500110EDA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A70E02091DC9500110EDA /* HomeViewController.swift */; };
@@ -29,6 +36,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FD6F87A218094FA0066B9EA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		2FD6F87D2180950E0066B9EA /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		2FD6F87F2180951B0066B9EA /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		2FD6F881218095220066B9EA /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		2FD6F883218095870066B9EA /* Onboarding1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Onboarding1.mp4; sourceTree = "<group>"; };
+		2FD6F884218095870066B9EA /* Onboarding3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Onboarding3.mp4; sourceTree = "<group>"; };
+		2FD6F885218095880066B9EA /* Onboarding2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Onboarding2.mp4; sourceTree = "<group>"; };
 		8596B09C2180679100DC96A4 /* MC1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MC1.entitlements; sourceTree = "<group>"; };
 		8596B09E2180679400DC96A4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		BA5A70DB2091DC9500110EDA /* MC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +79,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FD6F87C218094FF0066B9EA /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				2FD6F87A218094FA0066B9EA /* FirstViewController.swift */,
+				2FD6F87D2180950E0066B9EA /* SecondViewController.swift */,
+				2FD6F87F2180951B0066B9EA /* ThirdViewController.swift */,
+				2FD6F881218095220066B9EA /* FourthViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		8596B09B21805AD900DC96A4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,9 @@
 		BA5A70D22091DC9500110EDA = {
 			isa = PBXGroup;
 			children = (
+				2FD6F883218095870066B9EA /* Onboarding1.mp4 */,
+				2FD6F885218095880066B9EA /* Onboarding2.mp4 */,
+				2FD6F884218095870066B9EA /* Onboarding3.mp4 */,
 				BA5A70DD2091DC9500110EDA /* MC1 */,
 				BA5A70DC2091DC9500110EDA /* Products */,
 				8596B09D2180679400DC96A4 /* Frameworks */,
@@ -111,6 +139,7 @@
 				BAB403BD209811FA00BF7D31 /* TaskDataDelegate.swift */,
 				BA5A70E02091DC9500110EDA /* HomeViewController.swift */,
 				BAF186D72092CA3E00967D11 /* DetailViewController.swift */,
+				2FD6F87C218094FF0066B9EA /* Onboarding */,
 				BAF186D92092D98A00967D11 /* AddNewActivityViewController.swift */,
 				BAB403C32098D7FA00BF7D31 /* EditActivityViewController.swift */,
 				BAD2AADE20963841005E4FCB /* TaskDetailViewController.swift */,
@@ -194,6 +223,9 @@
 				BA5A70E92091DC9600110EDA /* LaunchScreen.storyboard in Resources */,
 				BA5A70E62091DC9600110EDA /* Assets.xcassets in Resources */,
 				BA5A70E42091DC9500110EDA /* Main.storyboard in Resources */,
+				2FD6F886218095880066B9EA /* Onboarding1.mp4 in Resources */,
+				2FD6F887218095880066B9EA /* Onboarding3.mp4 in Resources */,
+				2FD6F888218095880066B9EA /* Onboarding2.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +237,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF186DA2092D98A00967D11 /* AddNewActivityViewController.swift in Sources */,
+				2FD6F87E2180950E0066B9EA /* SecondViewController.swift in Sources */,
 				BAB403BE209811FA00BF7D31 /* TaskDataDelegate.swift in Sources */,
+				2FD6F882218095220066B9EA /* FourthViewController.swift in Sources */,
 				BA5A70E12091DC9500110EDA /* HomeViewController.swift in Sources */,
 				BA5A70F12091E13100110EDA /* ActivityCell.swift in Sources */,
 				BAF186D82092CA3E00967D11 /* DetailViewController.swift in Sources */,
@@ -213,8 +247,10 @@
 				BAB403C42098D7FA00BF7D31 /* EditActivityViewController.swift in Sources */,
 				BA5A70F32091E29F00110EDA /* Activity.swift in Sources */,
 				BAD2AADD209633A8005E4FCB /* TaskCell.swift in Sources */,
+				2FD6F8802180951B0066B9EA /* ThirdViewController.swift in Sources */,
 				BAB403C22098D48600BF7D31 /* ActivityDataDelegate.swift in Sources */,
 				BAD2AAD92095D11B005E4FCB /* Task.swift in Sources */,
+				2FD6F87B218094FA0066B9EA /* FirstViewController.swift in Sources */,
 				BAD2AADB2095E1CA005E4FCB /* User.swift in Sources */,
 				BA5A70DF2091DC9500110EDA /* AppDelegate.swift in Sources */,
 				BAB403E82098EB9500BF7D31 /* MC1.xcdatamodeld in Sources */,
@@ -364,7 +400,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MC1/MC1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 98R673PJSG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MC1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -383,7 +419,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MC1/MC1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 98R673PJSG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MC1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
