@@ -17,7 +17,6 @@ class Activity: NSObject{
     var image1: String = ""
     var image2: String = ""
     var remainingTask: [Task] = [Task]()
-    var completedTask: [Task] = [Task]()
     
     override init(){
     }

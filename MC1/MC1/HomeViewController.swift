@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        activities = createArray()
+//        activities = createArray()
         tableView.delegate = self
         tableView.dataSource = self
         self.navigationController?.navigationBar.tintColor = UIColor.init(red: 57/255, green: 172/255, blue: 217/255, alpha: 1)
@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
         
         let activity1 = Activity(name: "Birthday Trip", location: "Kuta Beach", category: "Beach", date: "June 11, 2018", remainingDays: "35")
         let activity2 = Activity(name: "Team's Outing", location: "Mt. Semeru", category: "Mountain", date: "July 14, 2018", remainingDays: "68")
-        
+
         tempActivities.append(activity1)
         tempActivities.append(activity2)
         
@@ -76,6 +76,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
     }
+    
+    func saveActivityToCK(activity: Activity){
+        
+    }
 }
 
 extension HomeViewController: ActivityDataDelegate {
@@ -86,6 +90,7 @@ extension HomeViewController: ActivityDataDelegate {
     
     func addActivity(activity: Activity) {
         activities.append(activity)
+        self.saveActivityToCK(activity: activity)
         tableView.reloadData()
     }
     

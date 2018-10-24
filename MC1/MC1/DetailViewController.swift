@@ -22,10 +22,12 @@ class DetailViewController: UIViewController{
     @IBOutlet weak var viewOutlet: UIView!
     
     // MARK: - Properties
-    var activity: Activity = Activity()
+    var activity: Activity!
     var activityIndex = 0
     var taskIndex = 0
     var delegate: ActivityDataDelegate?
+    
+    var sortedTasks: [Task] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +35,10 @@ class DetailViewController: UIViewController{
         locationLabel.text = activity.location
         dateLabel.text = activity.date
         remainingDaysLabel.text = activity.remainingDays
-        remainingTaskLabel.text = ("\(activity.remainingTask.count) remaining")
-        completedTaskLabel.text = ("\(activity.completedTask.count) completed")
+        remainingTaskLabel.text = ("\(getRemainingNo()) remaining")
+        completedTaskLabel.text = ("\(getCompletedNo()) completed")
         imageBackground.image = UIImage(named: activity.image2)
+        
         
         viewOutlet.layer.cornerRadius = 10.0
         
@@ -43,9 +46,25 @@ class DetailViewController: UIViewController{
         tableView.dataSource = self
     }
     
+    func getCompletedNo() -> Int{
+        return activity.remainingTask.filter({$0.completed == true}).count
+    }
+    
+    func getRemainingNo() -> Int{
+        return activity.remainingTask.filter({$0.completed == false}).count
+    }
+    
+    func getSortedTasks(){
+        self.sortedTasks.removeAll()
+        self.sortedTasks = activity.remainingTask.filter({$0.completed == false}) + activity.remainingTask.filter({$0.completed == true})
+        self.activity.remainingTask.removeAll()
+        self.activity.remainingTask = self.sortedTasks
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        remainingTaskLabel.text = ("\(activity.remainingTask.count) remaining")
-        completedTaskLabel.text = ("\(activity.completedTask.count) completed")
+        self.getSortedTasks()
+        remainingTaskLabel.text = ("\(getRemainingNo()) remaining")
+        completedTaskLabel.text = ("\(getCompletedNo()) completed")
         tableView.reloadData()
     }
     
@@ -57,17 +76,12 @@ class DetailViewController: UIViewController{
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (activity.remainingTask.count + activity.completedTask.count)
+        return activity.remainingTask.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var task = Task()
-        if indexPath.row < activity.remainingTask.count{
-            task = activity.remainingTask[indexPath.row]
-        } else {
-            task = activity.completedTask[indexPath.row - activity.remainingTask.count]
-        }
+        let task: Task = activity.remainingTask[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! TaskCell
         
@@ -82,11 +96,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? TaskDetailViewController {
-            if taskIndex < activity.remainingTask.count {
-                destination.task = activity.remainingTask[taskIndex]
-            } else {
-                destination.task = activity.completedTask[taskIndex - activity.remainingTask.count]
-            }
+            
+            destination.task = activity.remainingTask[taskIndex]
+           
             destination.delegate = self
             destination.index = taskIndex
         } else if let destination = segue.destination as? AddNewTaskViewController{
@@ -105,28 +117,12 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension DetailViewController: TaskDataDelegate {
     func editTask(task: Task, index: Int, completed: Bool?) {
-        if completed == nil {
-            if task.completed == true {
-                activity.completedTask[index-activity.remainingTask.count] = task
-            } else {
-                activity.remainingTask[index] = task
-            }
-        } else if completed == true {
-            activity.remainingTask.remove(at: index)
-            activity.completedTask.append(task)
-        } else {
-            activity.completedTask.remove(at: index-activity.remainingTask.count)
-            activity.remainingTask.append(task)
-        }
+        activity.remainingTask[index] = task
         viewWillAppear(true)
     }
     
     func deleteTask(task: Task, index: Int) {
-        if task.completed == true {
-            activity.completedTask.remove(at: index-activity.remainingTask.count)
-        } else {
-            activity.remainingTask.remove(at: index)
-        }
+        activity.remainingTask.remove(at: index)
         viewWillAppear(true)
     }
     
@@ -156,6 +152,4 @@ extension DetailViewController: ActivityDataDelegate {
         self.delegate?.deleteActivity(activity: self.activity, index: self.activityIndex)
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
 }
