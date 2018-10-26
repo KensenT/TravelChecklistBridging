@@ -15,6 +15,7 @@
 		2FD6F887218095880066B9EA /* Onboarding3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2FD6F884218095870066B9EA /* Onboarding3.mp4 */; };
 		2FD6F888218095880066B9EA /* Onboarding2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2FD6F885218095880066B9EA /* Onboarding2.mp4 */; };
 		2FD6F88A218096380066B9EA /* PageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6F889218096380066B9EA /* PageControlViewController.swift */; };
+		856FA10F2182F36C0062E873 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856FA10E2182F36C0062E873 /* NetworkHelper.swift */; };
 		8596B09F2180679400DC96A4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8596B09E2180679400DC96A4 /* CloudKit.framework */; };
 		BA5A70DF2091DC9500110EDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A70DE2091DC9500110EDA /* AppDelegate.swift */; };
 		BA5A70E12091DC9500110EDA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A70E02091DC9500110EDA /* HomeViewController.swift */; };
@@ -45,6 +46,7 @@
 		2FD6F884218095870066B9EA /* Onboarding3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Onboarding3.mp4; sourceTree = "<group>"; };
 		2FD6F885218095880066B9EA /* Onboarding2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Onboarding2.mp4; sourceTree = "<group>"; };
 		2FD6F889218096380066B9EA /* PageControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlViewController.swift; sourceTree = "<group>"; };
+		856FA10E2182F36C0062E873 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		8596B09C2180679100DC96A4 /* MC1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MC1.entitlements; sourceTree = "<group>"; };
 		8596B09E2180679400DC96A4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		BA5A70DB2091DC9500110EDA /* MC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,13 +95,6 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		8596B09B21805AD900DC96A4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		8596B09D2180679400DC96A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,8 +126,8 @@
 		BA5A70DD2091DC9500110EDA /* MC1 */ = {
 			isa = PBXGroup;
 			children = (
+				856FA10E2182F36C0062E873 /* NetworkHelper.swift */,
 				8596B09C2180679100DC96A4 /* MC1.entitlements */,
-				8596B09B21805AD900DC96A4 /* Model */,
 				BA5A70F22091E29F00110EDA /* Activity.swift */,
 				BAD2AAD82095D11B005E4FCB /* Task.swift */,
 				BAD2AADA2095E1CA005E4FCB /* User.swift */,
@@ -246,6 +241,7 @@
 				BA5A70E12091DC9500110EDA /* HomeViewController.swift in Sources */,
 				BA5A70F12091E13100110EDA /* ActivityCell.swift in Sources */,
 				BAF186D82092CA3E00967D11 /* DetailViewController.swift in Sources */,
+				856FA10F2182F36C0062E873 /* NetworkHelper.swift in Sources */,
 				2FD6F88A218096380066B9EA /* PageControlViewController.swift in Sources */,
 				BAD2AADF20963841005E4FCB /* TaskDetailViewController.swift in Sources */,
 				BAB403C42098D7FA00BF7D31 /* EditActivityViewController.swift in Sources */,
@@ -404,7 +400,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MC1/MC1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 98R673PJSG;
 				INFOPLIST_FILE = MC1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -423,7 +419,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MC1/MC1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 98R673PJSG;
 				INFOPLIST_FILE = MC1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

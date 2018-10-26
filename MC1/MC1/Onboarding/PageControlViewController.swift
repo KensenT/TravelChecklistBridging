@@ -37,7 +37,7 @@ class PageControlViewController: UIPageViewController, UIPageViewControllerDeleg
         pageControl.numberOfPages = orderedViewController.count
         pageControl.currentPage = 0
         pageControl.tintColor = UIColor.black
-        pageControl.pageIndicatorTintColor = UIColor.white
+        pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.currentPageIndicatorTintColor = UIColor.black
         self.view.addSubview(pageControl)
         

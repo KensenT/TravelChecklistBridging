@@ -152,6 +152,28 @@ class HomeViewController: UIViewController {
     }
 }
 
+
+// CHECK CONNECTION STATUS
+
+extension HomeViewController{
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

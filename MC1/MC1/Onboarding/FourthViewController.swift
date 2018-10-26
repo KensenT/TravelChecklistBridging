@@ -23,7 +23,7 @@ class FourthViewController: UIViewController {
         let player = AVPlayer(url: url)
         let layer: AVPlayerLayer = AVPlayerLayer(player: player)
         layer.backgroundColor = UIColor.white.cgColor
-        layer.frame = CGRect(x: 75, y: 260, width: 240, height: 448)
+        layer.frame = CGRect(x: 75, y: 285, width: 240, height: 448)
         layer.videoGravity = .resizeAspectFill
         self.view.layer.addSublayer(layer)
         player.actionAtItemEnd = .none
