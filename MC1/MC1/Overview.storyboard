@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mWF-y4-l7T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rsu-cm-j1J">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Overview-->
         <scene sceneID="laR-uM-7vr">
             <objects>
-                <viewController id="Rsu-cm-j1J" sceneMemberID="viewController">
+                <viewController id="Rsu-cm-j1J" customClass="HomeViewController" customModule="MC1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ytl-QS-EgR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,20 +81,41 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ruk-dc-RPh">
+                                <rect key="frame" x="0.0" y="40" width="375" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Internet Connection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0U-fQ-12m">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="PlU-f9-Zft"/>
                     </view>
                     <navigationItem key="navigationItem" title="Overview" id="cu5-Sq-tFq">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EK6-LD-VID"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EK6-LD-VID">
+                            <connections>
+                                <segue destination="uj8-By-ete" kind="show" id="xY7-mF-VIA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="statusBarView" destination="Ruk-dc-RPh" id="rxi-Ri-z37"/>
+                        <outlet property="statusLabel" destination="C0U-fQ-12m" id="JuF-XL-dw5"/>
                         <outlet property="tableView" destination="5Zs-F1-o1D" id="WXZ-Pr-2nE"/>
+                        <segue destination="tRu-4d-Msi" kind="show" identifier="homeToDetail" id="ZOl-QL-UGr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LhY-1D-UoD" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="-565"/>
+            <point key="canvasLocation" x="1764" y="-96"/>
         </scene>
         <!--AddActivity-->
         <scene sceneID="PpV-2r-TmE">
@@ -115,7 +136,7 @@
         <!--Overview-->
         <scene sceneID="AtS-m4-jka">
             <objects>
-                <viewController id="mWF-y4-l7T" customClass="HomeViewController" customModule="MC1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mWF-y4-l7T" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="czu-Pi-EwN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,19 +215,12 @@
                         <viewLayoutGuide key="safeArea" id="51U-Mz-WoU"/>
                     </view>
                     <navigationItem key="navigationItem" title="Overview" id="KjC-Z2-YhP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jrt-Mm-yvY">
-                            <connections>
-                                <segue destination="uj8-By-ete" kind="show" id="jx0-P5-aZI"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jrt-Mm-yvY"/>
                     </navigationItem>
-                    <connections>
-                        <segue destination="tRu-4d-Msi" kind="show" identifier="homeToDetail" id="9me-cq-SUb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Rl-uC-Mdp" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2044" y="-565.27093596059115"/>
+            <point key="canvasLocation" x="1874" y="-1082"/>
         </scene>
     </scenes>
     <resources>
