@@ -16,13 +16,21 @@ class HomeViewController: UIViewController {
     var index = 0
     var activities: [Activity] = []
     
+    var isOffline: Bool = false
+    var checkTimer: Timer!
+    
+    var fetchedFromCK: Bool = false
+    
+    @IBOutlet weak var statusBarView: UIView!
+    @IBOutlet weak var statusLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
         self.navigationController?.navigationBar.tintColor = UIColor.init(red: 57/255, green: 172/255, blue: 217/255, alpha: 1)
-        self.fetchFromCK()
+        self.initialConnectionCheck()
     }
     
     func sortActivities(){
@@ -65,6 +73,17 @@ class HomeViewController: UIViewController {
     }
     
     func fetchFromCK(){
+        if (self.fetchedFromCK == false)
+        {
+            self.fetchedFromCK = true
+        }
+        else
+        {
+            return
+        }
+        print("Refreshing data")
+        self.activities.removeAll()
+        
         let container = CKContainer.default()
         let database = container.publicCloudDatabase
         
@@ -138,17 +157,34 @@ class HomeViewController: UIViewController {
         // ---------------------------------------------------------------
     }
     
-    func createArray() -> [Activity]{
-        
-        var tempActivities: [Activity] = []
-        
-        let activity1 = Activity(name: "Birthday Trip", location: "Kuta Beach", category: "Beach", date: "June 11, 2018", remainingDays: "35")
-        let activity2 = Activity(name: "Team's Outing", location: "Mt. Semeru", category: "Mountain", date: "July 14, 2018", remainingDays: "68")
-
-        tempActivities.append(activity1)
-        tempActivities.append(activity2)
-        
-        return tempActivities
+    
+    func setStatusBar(status: Bool)
+    {
+        if (status)
+        {
+            self.statusBarView.backgroundColor = UIColor.green
+            self.statusLabel.text = "You are connected"
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                UIView.animate(withDuration: 0.4, delay: 0, options: UIViewAnimationOptions.allowUserInteraction, animations: {
+                    self.statusBarView.frame.origin.y = self.statusBarView.frame.origin.y - 42
+                }) { (finished) in
+                    self.statusBarView.isHidden = true
+                }
+            }
+        }
+        else
+        {
+            self.statusBarView.backgroundColor = UIColor.init(red: 216/255, green: 216/255, blue: 216/255, alpha: 1)
+            self.statusLabel.text = "No Internet Connection"
+            self.statusBarView.isHidden = false
+            
+            UIView.animate(withDuration: 0.4, delay: 0, options: UIViewAnimationOptions.allowUserInteraction, animations: {
+                self.statusBarView.frame.origin.y = self.statusBarView.frame.origin.y + 42
+            }) { (finished) in
+                
+            }
+        }
     }
 }
 
@@ -157,13 +193,33 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController{
     
+    func initialConnectionCheck(){
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.networkStatusChanged(_:)), name: NSNotification.Name(ReachabilityStatusChangedNotification), object: nil)
+        NetworkHelper().monitorReachabilityChanges()
+    }
     
-    
-    
-    
-    
-    
-    
+    @objc func networkStatusChanged(_ Notification: NSNotification){
+        let status = NetworkHelper().connectionStatus()
+        print(status)
+        
+        switch status {
+        case .offline:
+            if (self.isOffline == false)
+            {
+                self.isOffline = true
+                self.setStatusBar(status: false)
+            }
+        case .online(.wwan), .unknown:
+            self.fetchFromCK()
+        case .online(.wiFi):
+            if (self.isOffline == true)
+            {
+                self.isOffline = false
+                self.setStatusBar(status: true)
+            }
+            self.fetchFromCK()
+        }
+    }
 }
 
 

@@ -41,6 +41,7 @@
 		ED365C8F2182F65F00E05881 /* AddTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED365C8E2182F65F00E05881 /* AddTask.storyboard */; };
 		ED365C912182F68900E05881 /* AddActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED365C902182F68900E05881 /* AddActivity.storyboard */; };
 		ED365C932182F69A00E05881 /* EditActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED365C922182F69A00E05881 /* EditActivity.storyboard */; };
+		ED365C95218302C900E05881 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED365C94218302C900E05881 /* ActivityCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		ED365C8E2182F65F00E05881 /* AddTask.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTask.storyboard; sourceTree = "<group>"; };
 		ED365C902182F68900E05881 /* AddActivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddActivity.storyboard; sourceTree = "<group>"; };
 		ED365C922182F69A00E05881 /* EditActivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditActivity.storyboard; sourceTree = "<group>"; };
+		ED365C94218302C900E05881 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				BAD2AAD82095D11B005E4FCB /* Task.swift */,
 				BAD2AADA2095E1CA005E4FCB /* User.swift */,
 				BA5A70F02091E13100110EDA /* ActivityCell.swift */,
+				ED365C94218302C900E05881 /* ActivityCollectionViewCell.swift */,
 				BAD2AADC209633A8005E4FCB /* TaskCell.swift */,
 				BAB403C12098D48600BF7D31 /* ActivityDataDelegate.swift */,
 				BAB403BD209811FA00BF7D31 /* TaskDataDelegate.swift */,
@@ -272,6 +275,7 @@
 				BA5A70F32091E29F00110EDA /* Activity.swift in Sources */,
 				BAD2AADD209633A8005E4FCB /* TaskCell.swift in Sources */,
 				2FD6F8802180951B0066B9EA /* ThirdViewController.swift in Sources */,
+				ED365C95218302C900E05881 /* ActivityCollectionViewCell.swift in Sources */,
 				BAB403C22098D48600BF7D31 /* ActivityDataDelegate.swift in Sources */,
 				BAD2AAD92095D11B005E4FCB /* Task.swift in Sources */,
 				2FD6F87B218094FA0066B9EA /* FirstViewController.swift in Sources */,
