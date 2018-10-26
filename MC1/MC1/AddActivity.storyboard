@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oqA-xF-zc0">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina5_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,12 +15,11 @@
             <objects>
                 <viewController id="oqA-xF-zc0" customClass="AddNewActivityViewController" customModule="MC1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fdU-zr-Ah2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Camping" textAlignment="center" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="02R-QN-sKn">
-                                <rect key="frame" x="36" y="174" width="303" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Camping" textAlignment="center" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="02R-QN-sKn">
+                                <rect key="frame" x="69" y="34" width="674" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -28,9 +27,8 @@
                                     <action selector="activityFieldPressed" destination="oqA-xF-zc0" eventType="editingDidBegin" id="aId-jf-pkX"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g Bandung" textAlignment="center" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="1bL-sM-B7D">
-                                <rect key="frame" x="36" y="244" width="303" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g Bandung" textAlignment="center" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="1bL-sM-B7D">
+                                <rect key="frame" x="69" y="100" width="674" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -38,51 +36,44 @@
                                     <action selector="locationFieldPressed" destination="oqA-xF-zc0" eventType="editingDidBegin" id="vTA-Br-YkB"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Category" textAlignment="center" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="1Ov-Pq-1OH">
-                                <rect key="frame" x="36" y="311" width="303" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Category" textAlignment="center" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="1Ov-Pq-1OH">
+                                <rect key="frame" x="69" y="170" width="674" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="LII-ym-eHL">
-                                <rect key="frame" x="36" y="378" width="303" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="LII-ym-eHL">
+                                <rect key="frame" x="69" y="234" width="674" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activity Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUy-x2-Dxx">
-                                <rect key="frame" x="36" y="149" width="102" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUy-x2-Dxx">
+                                <rect key="frame" x="69" y="10" width="674" height="21"/>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN-Bold" family="Malayalam Sangam MN" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOs-eV-G6Y">
-                                <rect key="frame" x="36" y="219" width="63" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOs-eV-G6Y">
+                                <rect key="frame" x="69" y="76" width="674" height="21"/>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN-Bold" family="Malayalam Sangam MN" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJo-H2-tvc">
-                                <rect key="frame" x="36" y="286" width="66" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJo-H2-tvc">
+                                <rect key="frame" x="69" y="145" width="674" height="21"/>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN-Bold" family="Malayalam Sangam MN" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLG-uo-xBA">
-                                <rect key="frame" x="36" y="353" width="35" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLG-uo-xBA">
+                                <rect key="frame" x="69" y="208" width="674" height="21"/>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN-Bold" family="Malayalam Sangam MN" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kba-RD-rls">
-                                <rect key="frame" x="36" y="432" width="303" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kba-RD-rls">
+                                <rect key="frame" x="69" y="278" width="674" height="33"/>
                                 <color key="backgroundColor" red="0.22352941179999999" green="0.67450980390000004" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MalayalamSangamMN-Bold" family="Malayalam Sangam MN" pointSize="17"/>
                                 <state key="normal" title="Done">
@@ -94,6 +85,35 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WaC-fb-R3e" firstAttribute="trailing" secondItem="nOs-eV-G6Y" secondAttribute="trailing" constant="25" id="1Ki-Nu-WG0"/>
+                            <constraint firstItem="WaC-fb-R3e" firstAttribute="trailing" secondItem="1bL-sM-B7D" secondAttribute="trailing" constant="25" id="3iP-gR-UqX"/>
+                            <constraint firstItem="1Ov-Pq-1OH" firstAttribute="leading" secondItem="WaC-fb-R3e" secondAttribute="leading" constant="25" id="8Kk-5g-h0t"/>
+                            <constraint firstItem="nOs-eV-G6Y" firstAttribute="leading" secondItem="WaC-fb-R3e" secondAttribute="leading" constant="25" id="AoG-rx-qVB"/>
+                            <constraint firstItem="nOs-eV-G6Y" firstAttribute="top" secondItem="02R-QN-sKn" secondAttribute="bottom" constant="12" id="GjQ-HI-KQz"/>
+                            <constraint firstItem="fLG-uo-xBA" firstAttribute="leading" secondItem="WaC-fb-R3e" secondAttribute="leading" constant="25" id="IWQ-EL-xqy"/>
+                            <constraint firstItem="WaC-fb-R3e" firstAttribute="trailing" secondItem="LII-ym-eHL" secondAttribute="trailing" constant="25" id="IeD-r0-iM6"/>
+                            <constraint firstItem="kba-RD-rls" firstAttribute="top" secondItem="LII-ym-eHL" secondAttribute="bottom" constant="14" id="J5m-kl-mWc"/>
+                            <constraint firstItem="LII-ym-eHL" firstAttribute="leading" secondItem="WaC-fb-R3e" secondAttribute="leading" constant="25" id="J6v-43-UST"/>
+                            <constraint firstItem="aJo-H2-tvc" firstAttribute="top" secondItem="1bL-sM-B7D" secondAttribute="bottom" constant="15" id="JAr-j4-G9z"/>
+                            <constraint firstItem="1Ov-Pq-1OH" firstAttribute="top" secondItem="aJo-H2-tvc" secondAttribute="bottom" constant="4" id="Kcd-7e-rC4"/>
+                            <constraint firstItem="fLG-uo-xBA" firstAttribute="top" secondItem="1Ov-Pq-1OH" secondAttribute="bottom" constant="8" id="KjF-S5-PEc"/>
+                            <constraint firstItem="1bL-sM-B7D" firstAttribute="top" secondItem="nOs-eV-G6Y" secondAttribute="bottom" constant="3" id="OKz-1o-MB8"/>
+                            <constraint firstItem="WaC-fb-R3e" firstAttribute="trailing" secondItem="aJo-H2-tvc" secondAttribute="trailing" constant="25" id="Odu-vw-AiC"/>
+                            <constraint firstItem="WaC-fb-R3e" firstAttribute="trailing" secondItem="VUy-x2-Dxx" secondAttribute="trailing" constant="25" id="OjU-df-H0A"/>
+                            <constraint firstItem="aJo-H2-tvc" firstAttribute="leading" secondItem="WaC-fb-R3e" secondAttribute="leading" constant="25" id="Oux-ox-QXE"/>
+                            <constraint firstItem="WaC-fb-R3e" firstAttribute="trailing" secondItem="02R-QN-sKn" secondAttribute="trailing" constant="25" id="S4S-Tj-nbX"/>
+                            <constraint firstItem="02R-QN-sKn" firstAttribute="leading" secondItem="WaC-fb-R3e" secondAttribute="leading" constant="25" id="XPj-KV-tRg"/>
+                            <constraint firstItem="WaC-fb-R3e" firstAttribute="trailing" secondItem="fLG-uo-xBA" secondAttribute="trailing" constant="25" id="Y7B-VD-0Tm"/>
+                            <constraint firstItem="02R-QN-sKn" firstAttribute="top" secondItem="VUy-x2-Dxx" secondAttribute="bottom" constant="3" id="YXu-qM-hzG"/>
+                            <constraint firstItem="WaC-fb-R3e" firstAttribute="trailing" secondItem="kba-RD-rls" secondAttribute="trailing" constant="25" id="bYV-fM-YGI"/>
+                            <constraint firstItem="LII-ym-eHL" firstAttribute="top" secondItem="fLG-uo-xBA" secondAttribute="bottom" constant="5" id="d26-x8-Zwr"/>
+                            <constraint firstItem="kba-RD-rls" firstAttribute="leading" secondItem="WaC-fb-R3e" secondAttribute="leading" constant="25" id="gMQ-eC-XwI"/>
+                            <constraint firstItem="VUy-x2-Dxx" firstAttribute="leading" secondItem="WaC-fb-R3e" secondAttribute="leading" constant="25" id="jun-oO-LXi"/>
+                            <constraint firstItem="VUy-x2-Dxx" firstAttribute="top" secondItem="WaC-fb-R3e" secondAttribute="top" constant="10" id="mgJ-mV-Sh7"/>
+                            <constraint firstItem="1bL-sM-B7D" firstAttribute="leading" secondItem="WaC-fb-R3e" secondAttribute="leading" constant="25" id="xEI-XC-RDq"/>
+                            <constraint firstItem="WaC-fb-R3e" firstAttribute="trailing" secondItem="1Ov-Pq-1OH" secondAttribute="trailing" constant="25" id="yPb-sW-L3G"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WaC-fb-R3e"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Activity" id="Po7-h4-ndd"/>
