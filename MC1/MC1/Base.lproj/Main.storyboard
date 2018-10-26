@@ -59,24 +59,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Travel Checklist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBy-dh-RAN">
-                                <rect key="frame" x="25" y="559" width="324" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Travel Checklist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBy-dh-RAN">
+                                <rect key="frame" x="25.666666666666657" y="559" width="324" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="6eC-Qd-CuI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="A Collaborative Travel Planner" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-eo-YcP">
-                                <rect key="frame" x="45" y="592" width="284" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="A Collaborative Travel Planner" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-eo-YcP">
+                                <rect key="frame" x="75.666666666666686" y="592" width="224" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="g21-UV-Gso"/>
+                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxS-pF-vHb">
-                                <rect key="frame" x="0.0" y="732" width="376" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxS-pF-vHb">
+                                <rect key="frame" x="0.0" y="732" width="375" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="bS4-01-d3C"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Take the Tour">
                                     <color key="titleColor" red="0.36273196340000002" green="0.66335195300000005" blue="0.82747411729999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -84,6 +90,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2274509804" green="0.6705882353" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VxS-pF-vHb" firstAttribute="top" secondItem="Rbt-eo-YcP" secondAttribute="bottom" constant="94" id="EIP-xA-10v"/>
+                            <constraint firstItem="JBy-dh-RAN" firstAttribute="centerX" secondItem="AMe-lq-PPz" secondAttribute="centerX" id="R9F-DV-VyY"/>
+                            <constraint firstItem="Rbt-eo-YcP" firstAttribute="top" secondItem="JBy-dh-RAN" secondAttribute="bottom" constant="4" id="XU2-kB-AfP"/>
+                            <constraint firstAttribute="bottom" secondItem="VxS-pF-vHb" secondAttribute="bottom" id="YLs-vl-RNY"/>
+                            <constraint firstItem="Rbt-eo-YcP" firstAttribute="centerX" secondItem="AMe-lq-PPz" secondAttribute="centerX" id="gsr-qF-Qum"/>
+                            <constraint firstAttribute="trailing" secondItem="VxS-pF-vHb" secondAttribute="trailing" id="ln6-id-ZEr"/>
+                            <constraint firstItem="VxS-pF-vHb" firstAttribute="leading" secondItem="vpz-Pp-gox" secondAttribute="leading" id="lpC-xw-2Zw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vpz-Pp-gox"/>
                     </view>
                 </viewController>
@@ -99,31 +114,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwF-MA-CHy">
-                                <rect key="frame" x="0.0" y="732" width="376" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwF-MA-CHy">
+                                <rect key="frame" x="0.0" y="732" width="375" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="YXf-kO-mh9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Got it">
                                     <color key="titleColor" red="0.36273196340000002" green="0.66335195300000005" blue="0.82747411729999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plan Your Trip!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn2-Rp-suV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plan Your Trip!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn2-Rp-suV">
                                 <rect key="frame" x="105" y="116" width="165" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="165" id="XBG-XW-ZHS"/>
+                                    <constraint firstAttribute="height" constant="29" id="oa0-mk-qg7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Rencanakan aktivitas, pilih lokasi, tentukan waktu untuk perjalanan anda" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWZ-6n-r6O">
-                                <rect key="frame" x="45" y="153" width="284" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Rencanakan aktivitas, pilih lokasi, tentukan waktu untuk perjalanan anda" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWZ-6n-r6O">
+                                <rect key="frame" x="45.666666666666657" y="153" width="284" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="1JK-xz-Wzu"/>
+                                    <constraint firstAttribute="width" constant="284" id="77j-vn-YLR"/>
+                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.36273196340000002" green="0.66335195300000005" blue="0.82747411729999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="FWZ-6n-r6O" firstAttribute="centerX" secondItem="5Wc-Fq-7rF" secondAttribute="centerX" id="05S-me-9h0"/>
+                            <constraint firstAttribute="trailing" secondItem="kwF-MA-CHy" secondAttribute="trailing" id="Akw-wk-Ob9"/>
+                            <constraint firstItem="bn2-Rp-suV" firstAttribute="top" secondItem="NjX-Ch-oxw" secondAttribute="top" constant="72" id="Kdb-qi-hEK"/>
+                            <constraint firstItem="bn2-Rp-suV" firstAttribute="centerX" secondItem="5Wc-Fq-7rF" secondAttribute="centerX" id="dGB-Q2-K5R"/>
+                            <constraint firstAttribute="bottom" secondItem="kwF-MA-CHy" secondAttribute="bottom" id="gop-9K-Fe5"/>
+                            <constraint firstItem="FWZ-6n-r6O" firstAttribute="top" secondItem="bn2-Rp-suV" secondAttribute="bottom" constant="8" id="ikL-Vw-tgC"/>
+                            <constraint firstItem="kwF-MA-CHy" firstAttribute="leading" secondItem="NjX-Ch-oxw" secondAttribute="leading" id="lAH-gE-bid"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NjX-Ch-oxw"/>
                     </view>
                 </viewController>
@@ -139,31 +171,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKf-IK-Qtz">
-                                <rect key="frame" x="0.0" y="732" width="376" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKf-IK-Qtz">
+                                <rect key="frame" x="0.0" y="732" width="375" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="HKe-1D-NMQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Got it">
                                     <color key="titleColor" red="0.36273196340000002" green="0.66335195300000005" blue="0.82747411729999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Siapkan perlengkapan yang dibutuhkan saat perjalanan anda" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yos-Ko-O1a">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Siapkan perlengkapan yang dibutuhkan saat perjalanan anda" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yos-Ko-O1a">
                                 <rect key="frame" x="45" y="156" width="284" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="KR2-y4-KLe"/>
+                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Prepare Task Needed!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyS-Fd-w53">
-                                <rect key="frame" x="66" y="119" width="251" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prepare Task Needed!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyS-Fd-w53">
+                                <rect key="frame" x="62" y="119" width="251" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="251" id="4oz-UR-6Ih"/>
+                                    <constraint firstAttribute="height" constant="29" id="qyH-nU-d7o"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.2274509804" green="0.6705882353" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yos-Ko-O1a" firstAttribute="leading" secondItem="9mC-F0-a3h" secondAttribute="leading" constant="45" id="10z-bg-7qY"/>
+                            <constraint firstItem="YyS-Fd-w53" firstAttribute="centerX" secondItem="cT4-fm-3Sl" secondAttribute="centerX" id="3jP-E7-kdf"/>
+                            <constraint firstItem="YKf-IK-Qtz" firstAttribute="leading" secondItem="9mC-F0-a3h" secondAttribute="leading" id="ILX-Vw-H3E"/>
+                            <constraint firstItem="YyS-Fd-w53" firstAttribute="top" secondItem="9mC-F0-a3h" secondAttribute="top" constant="75" id="IfB-qt-2KV"/>
+                            <constraint firstItem="yos-Ko-O1a" firstAttribute="top" secondItem="YyS-Fd-w53" secondAttribute="bottom" constant="8" id="MHx-0y-cV0"/>
+                            <constraint firstAttribute="bottom" secondItem="YKf-IK-Qtz" secondAttribute="bottom" id="TJ9-MA-eis"/>
+                            <constraint firstAttribute="trailing" secondItem="YKf-IK-Qtz" secondAttribute="trailing" id="V2o-gJ-4Cn"/>
+                            <constraint firstItem="9mC-F0-a3h" firstAttribute="trailing" secondItem="yos-Ko-O1a" secondAttribute="trailing" constant="46" id="dOb-ei-Qmw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9mC-F0-a3h"/>
                     </view>
                 </viewController>
@@ -179,24 +228,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set PIC for Each Task!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qb-p3-pdG">
-                                <rect key="frame" x="75" y="115" width="254" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set PIC for Each Task!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qb-p3-pdG">
+                                <rect key="frame" x="60.666666666666657" y="115" width="253.99999999999997" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="254" id="YuW-hS-3Sv"/>
+                                    <constraint firstAttribute="height" constant="29" id="xt6-HI-a7N"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Berbagi tugas dengan teman untuk menyiapkan perlengkapan perjalanan anda" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKL-9n-lSY">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Berbagi tugas dengan teman untuk menyiapkan perlengkapan perjalanan anda" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKL-9n-lSY">
                                 <rect key="frame" x="45" y="152" width="284" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="KjD-Z7-2Wy"/>
+                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thd-Sv-cYn">
-                                <rect key="frame" x="0.0" y="732" width="376" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thd-Sv-cYn">
+                                <rect key="frame" x="0.0" y="732" width="375" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="vJe-mj-9YR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" red="0.36273196340000002" green="0.66335195300000005" blue="0.82747411729999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -207,6 +263,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.36273196340000002" green="0.66335195300000005" blue="0.82747411729999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Thd-Sv-cYn" firstAttribute="leading" secondItem="yTo-V6-31d" secondAttribute="leading" id="2bS-EU-H3T"/>
+                            <constraint firstItem="yTo-V6-31d" firstAttribute="trailing" secondItem="bKL-9n-lSY" secondAttribute="trailing" constant="46" id="5Ss-J2-XIl"/>
+                            <constraint firstAttribute="bottom" secondItem="Thd-Sv-cYn" secondAttribute="bottom" id="9qe-yO-VNK"/>
+                            <constraint firstItem="bKL-9n-lSY" firstAttribute="leading" secondItem="yTo-V6-31d" secondAttribute="leading" constant="45" id="BZI-dL-80s"/>
+                            <constraint firstAttribute="trailing" secondItem="Thd-Sv-cYn" secondAttribute="trailing" id="JvF-XR-jQp"/>
+                            <constraint firstItem="0qb-p3-pdG" firstAttribute="centerX" secondItem="16d-6N-axO" secondAttribute="centerX" id="TfS-pz-ywo"/>
+                            <constraint firstItem="0qb-p3-pdG" firstAttribute="top" secondItem="yTo-V6-31d" secondAttribute="top" constant="71" id="fmQ-7i-eDV"/>
+                            <constraint firstItem="bKL-9n-lSY" firstAttribute="top" secondItem="0qb-p3-pdG" secondAttribute="bottom" constant="8" id="wmF-j7-F9r"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yTo-V6-31d"/>
                     </view>
                 </viewController>
