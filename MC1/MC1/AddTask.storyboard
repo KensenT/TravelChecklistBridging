@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gPd-N8-oaA">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina5_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,54 +15,41 @@
             <objects>
                 <viewController id="gPd-N8-oaA" customClass="AddNewTaskViewController" customModule="MC1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NNI-uA-CXm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Person In Charge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZo-aW-BlG">
-                                <rect key="frame" x="36" y="194" width="126" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTP-xe-QWQ">
+                                <rect key="frame" x="68.999999999999972" y="20" width="431.33333333333326" height="21"/>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN-Bold" family="Malayalam Sangam MN" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTP-xe-QWQ">
-                                <rect key="frame" x="35" y="117" width="81" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person In Charge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZo-aW-BlG">
+                                <rect key="frame" x="69" y="95" width="674" height="20"/>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN-Bold" family="Malayalam Sangam MN" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxe-aJ-kdI">
-                                <rect key="frame" x="35" y="268" width="83" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select PIC" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="71M-Zc-iKE">
-                                <rect key="frame" x="35" y="223" width="303" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select PIC" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="71M-Zc-iKE">
+                                <rect key="frame" x="69" y="119" width="674" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6AK-xf-mXk">
-                                <rect key="frame" x="35" y="297" width="303" height="147"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Tent" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5MD-XN-1vZ">
-                                <rect key="frame" x="35" y="147" width="303" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Tent" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5MD-XN-1vZ">
+                                <rect key="frame" x="69" y="46" width="674" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftm-Ko-GN0">
-                                <rect key="frame" x="35" y="472" width="303" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxe-aJ-kdI">
+                                <rect key="frame" x="69" y="167" width="674" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN-Bold" family="Malayalam Sangam MN" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftm-Ko-GN0">
+                                <rect key="frame" x="69" y="286" width="674" height="33"/>
                                 <color key="backgroundColor" red="0.22352941179999999" green="0.67450980390000004" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MalayalamSangamMN-Bold" family="Malayalam Sangam MN" pointSize="17"/>
                                 <state key="normal" title="Done">
@@ -72,8 +59,40 @@
                                     <action selector="doneButtonPressed" destination="gPd-N8-oaA" eventType="touchUpInside" id="dfh-FG-OAV"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6AK-xf-mXk">
+                                <rect key="frame" x="69" y="191" width="674" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ve5-Ts-Jcv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6AK-xf-mXk" firstAttribute="leading" secondItem="bst-M2-nqE" secondAttribute="leading" constant="25" id="2Fw-PI-XRU"/>
+                            <constraint firstItem="bst-M2-nqE" firstAttribute="trailing" secondItem="71M-Zc-iKE" secondAttribute="trailing" constant="25" id="Bvx-Ie-LbD"/>
+                            <constraint firstItem="bst-M2-nqE" firstAttribute="trailing" secondItem="5MD-XN-1vZ" secondAttribute="trailing" constant="25" id="K0I-Ib-ola"/>
+                            <constraint firstItem="sZo-aW-BlG" firstAttribute="leading" secondItem="bst-M2-nqE" secondAttribute="leading" constant="25" id="PmD-kZ-QBp"/>
+                            <constraint firstItem="zxe-aJ-kdI" firstAttribute="top" secondItem="71M-Zc-iKE" secondAttribute="bottom" constant="18" id="SCD-he-SRD"/>
+                            <constraint firstItem="5MD-XN-1vZ" firstAttribute="top" secondItem="RTP-xe-QWQ" secondAttribute="bottom" constant="5" id="StP-wN-HrS"/>
+                            <constraint firstItem="71M-Zc-iKE" firstAttribute="top" secondItem="sZo-aW-BlG" secondAttribute="bottom" constant="4" id="TXL-ip-yZU"/>
+                            <constraint firstItem="sZo-aW-BlG" firstAttribute="top" secondItem="5MD-XN-1vZ" secondAttribute="bottom" constant="19" id="UY7-bK-L7i"/>
+                            <constraint firstItem="bst-M2-nqE" firstAttribute="trailing" secondItem="Ftm-Ko-GN0" secondAttribute="trailing" constant="25" id="Waw-ff-M5r"/>
+                            <constraint firstItem="bst-M2-nqE" firstAttribute="trailing" secondItem="zxe-aJ-kdI" secondAttribute="trailing" constant="25" id="YvJ-N0-M2U"/>
+                            <constraint firstItem="bst-M2-nqE" firstAttribute="trailing" secondItem="6AK-xf-mXk" secondAttribute="trailing" constant="25" id="dWQ-gM-QBY"/>
+                            <constraint firstItem="Ftm-Ko-GN0" firstAttribute="top" secondItem="6AK-xf-mXk" secondAttribute="bottom" constant="15" id="dsG-ew-SAi"/>
+                            <constraint firstItem="zxe-aJ-kdI" firstAttribute="leading" secondItem="bst-M2-nqE" secondAttribute="leading" constant="25" id="dzV-5A-xRs"/>
+                            <constraint firstItem="Ftm-Ko-GN0" firstAttribute="leading" secondItem="bst-M2-nqE" secondAttribute="leading" constant="25" id="eik-5b-ebT"/>
+                            <constraint firstItem="71M-Zc-iKE" firstAttribute="leading" secondItem="bst-M2-nqE" secondAttribute="leading" constant="25" id="enR-LC-eF2"/>
+                            <constraint firstItem="5MD-XN-1vZ" firstAttribute="leading" secondItem="bst-M2-nqE" secondAttribute="leading" constant="25" id="iaY-4I-z1r"/>
+                            <constraint firstItem="bst-M2-nqE" firstAttribute="trailing" secondItem="sZo-aW-BlG" secondAttribute="trailing" constant="25" id="sJ4-gT-FZc"/>
+                            <constraint firstItem="bst-M2-nqE" firstAttribute="trailing" secondItem="RTP-xe-QWQ" secondAttribute="trailing" constant="267.67000000000002" id="tzR-lc-K9c"/>
+                            <constraint firstItem="RTP-xe-QWQ" firstAttribute="leading" secondItem="bst-M2-nqE" secondAttribute="leading" constant="25" id="vEo-LY-v8j"/>
+                            <constraint firstItem="6AK-xf-mXk" firstAttribute="top" secondItem="zxe-aJ-kdI" secondAttribute="bottom" constant="3.6666666666666572" id="yab-Nt-BDo"/>
+                            <constraint firstItem="RTP-xe-QWQ" firstAttribute="top" secondItem="bst-M2-nqE" secondAttribute="top" constant="20" id="yrs-0q-Ll8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bst-M2-nqE"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Task" id="I6F-Pl-VN5"/>
@@ -87,7 +106,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kcy-gZ-lwd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="iko-h8-ZZt"/>
             </objects>
-            <point key="canvasLocation" x="3385" y="-1137"/>
+            <point key="canvasLocation" x="3384.8000000000002" y="-1137.192118226601"/>
         </scene>
     </scenes>
 </document>
