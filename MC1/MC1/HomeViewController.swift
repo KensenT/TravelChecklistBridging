@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         self.navigationController?.navigationBar.tintColor = UIColor.init(red: 57/255, green: 172/255, blue: 217/255, alpha: 1)
-        self.fetchFromCK()
+        self.initialConnectionCheck()
     }
     
     func sortActivities(){
@@ -157,8 +157,38 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController{
     
+    func initialConnectionCheck(){
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.networkStatusChanged(_:)), name: NSNotification.Name(ReachabilityStatusChangedNotification), object: nil)
+        NetworkHelper().monitorReachabilityChanges()
+    }
     
+    @objc func networkStatusChanged(_ Notification: NSNotification){
+        let status = NetworkHelper().connectionStatus()
+        print(status)
+        
+        switch status {
+        case .offline:
+            let offlineAlert = UIAlertController(title: "Warning", message: "You are offline, please check your internet connection", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
+                self.setNetworkObserver()
+            }
+            offlineAlert.addAction(okAction)
+            self.present(offlineAlert, animated: true, completion: nil)
+        case .online(.wwan), .unknown:
+            let unstableAlert = UIAlertController(title: "Warning", message: "You are running in unstable or poor connection, do you want to continue the process?", preferredStyle: .alert)
+            unstableAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
+                
+            }))
+            unstableAlert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+            self.present(unstableAlert, animated: true, completion: nil)
+        case .online(.wiFi):
+            self.fetchFromCK()
+        }
+    }
     
+    func setNetworkObserver(){
+        
+    }
     
     
     
