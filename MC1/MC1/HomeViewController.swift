@@ -16,6 +16,11 @@ class HomeViewController: UIViewController {
     var index = 0
     var activities: [Activity] = []
     
+    var isOffline: Bool = false
+    var checkTimer: Timer!
+    
+    var fetchedFromCK: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -65,6 +70,17 @@ class HomeViewController: UIViewController {
     }
     
     func fetchFromCK(){
+        if (self.fetchedFromCK == false)
+        {
+            self.fetchedFromCK = true
+        }
+        else
+        {
+            return
+        }
+        print("Refreshing data")
+        self.activities.removeAll()
+        
         let container = CKContainer.default()
         let database = container.publicCloudDatabase
         
@@ -168,6 +184,10 @@ extension HomeViewController{
         
         switch status {
         case .offline:
+            if (self.isOffline == true)
+            {
+                return
+            }
             let offlineAlert = UIAlertController(title: "Warning", message: "You are offline, please check your internet connection", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
                 self.setNetworkObserver()
@@ -175,22 +195,47 @@ extension HomeViewController{
             offlineAlert.addAction(okAction)
             self.present(offlineAlert, animated: true, completion: nil)
         case .online(.wwan), .unknown:
+            if (self.isOffline == true)
+            {
+                return
+            }
             let unstableAlert = UIAlertController(title: "Warning", message: "You are running in unstable or poor connection, do you want to continue the process?", preferredStyle: .alert)
-            unstableAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
-                
-            }))
-            unstableAlert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
+                self.fetchFromCK()
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (UIAlertAction) in
+                self.setNetworkObserver()
+            }
+            unstableAlert.addAction(okAction)
+            unstableAlert.addAction(cancelAction)
             self.present(unstableAlert, animated: true, completion: nil)
         case .online(.wiFi):
+            self.isOffline = false
             self.fetchFromCK()
         }
     }
     
     func setNetworkObserver(){
-        
+        if (self.isOffline == false)
+        {
+            self.isOffline = true
+            self.fetchedFromCK = false
+            
+            self.checkTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(HomeViewController.checkConnection), userInfo: nil, repeats: true)
+        }
     }
     
-    
+    @objc func checkConnection()
+    {
+        if (self.isOffline == false)
+        {
+            self.checkTimer.invalidate()
+        }
+        else
+        {
+            NetworkHelper().monitorReachabilityChanges()
+        }
+    }
     
     
     
