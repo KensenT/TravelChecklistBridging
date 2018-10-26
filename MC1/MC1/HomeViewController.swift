@@ -204,67 +204,22 @@ extension HomeViewController{
         
         switch status {
         case .offline:
-            if (self.isOffline == true)
+            if (self.isOffline == false)
             {
-                return
+                self.isOffline = true
+                self.setStatusBar(status: false)
             }
-            let offlineAlert = UIAlertController(title: "Warning", message: "You are offline, please check your internet connection", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
-                self.setNetworkObserver()
-            }
-            offlineAlert.addAction(okAction)
-            self.present(offlineAlert, animated: true, completion: nil)
         case .online(.wwan), .unknown:
-            if (self.isOffline == true)
-            {
-                return
-            }
-            let unstableAlert = UIAlertController(title: "Warning", message: "You are running in unstable or poor connection, do you want to continue the process?", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
-                self.fetchFromCK()
-            })
-            let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (UIAlertAction) in
-                self.setNetworkObserver()
-            }
-            unstableAlert.addAction(okAction)
-            unstableAlert.addAction(cancelAction)
-            self.present(unstableAlert, animated: true, completion: nil)
+            self.fetchFromCK()
         case .online(.wiFi):
             if (self.isOffline == true)
             {
+                self.isOffline = false
                 self.setStatusBar(status: true)
             }
-            self.isOffline = false
             self.fetchFromCK()
         }
     }
-    
-    func setNetworkObserver(){
-        if (self.isOffline == false)
-        {
-            self.setStatusBar(status: false)
-            
-            self.isOffline = true
-            self.fetchedFromCK = false
-            
-            self.checkTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(HomeViewController.checkConnection), userInfo: nil, repeats: true)
-        }
-    }
-    
-    @objc func checkConnection()
-    {
-        if (self.isOffline == false)
-        {
-            self.checkTimer.invalidate()
-        }
-        else
-        {
-            NetworkHelper().monitorReachabilityChanges()
-        }
-    }
-    
-    
-    
 }
 
 
