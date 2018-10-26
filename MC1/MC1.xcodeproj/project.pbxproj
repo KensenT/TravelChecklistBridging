@@ -35,6 +35,12 @@
 		BAD2AADF20963841005E4FCB /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD2AADE20963841005E4FCB /* TaskDetailViewController.swift */; };
 		BAF186D82092CA3E00967D11 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF186D72092CA3E00967D11 /* DetailViewController.swift */; };
 		BAF186DA2092D98A00967D11 /* AddNewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF186D92092D98A00967D11 /* AddNewActivityViewController.swift */; };
+		ED365C892182F5F500E05881 /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED365C882182F5F500E05881 /* Overview.storyboard */; };
+		ED365C8B2182F61A00E05881 /* ActivityDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED365C8A2182F61A00E05881 /* ActivityDetails.storyboard */; };
+		ED365C8D2182F65500E05881 /* TaskDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED365C8C2182F65500E05881 /* TaskDetails.storyboard */; };
+		ED365C8F2182F65F00E05881 /* AddTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED365C8E2182F65F00E05881 /* AddTask.storyboard */; };
+		ED365C912182F68900E05881 /* AddActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED365C902182F68900E05881 /* AddActivity.storyboard */; };
+		ED365C932182F69A00E05881 /* EditActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED365C922182F69A00E05881 /* EditActivity.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +75,12 @@
 		BAD2AADE20963841005E4FCB /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		BAF186D72092CA3E00967D11 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BAF186D92092D98A00967D11 /* AddNewActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewActivityViewController.swift; sourceTree = "<group>"; };
+		ED365C882182F5F500E05881 /* Overview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overview.storyboard; sourceTree = "<group>"; };
+		ED365C8A2182F61A00E05881 /* ActivityDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityDetails.storyboard; sourceTree = "<group>"; };
+		ED365C8C2182F65500E05881 /* TaskDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskDetails.storyboard; sourceTree = "<group>"; };
+		ED365C8E2182F65F00E05881 /* AddTask.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTask.storyboard; sourceTree = "<group>"; };
+		ED365C902182F68900E05881 /* AddActivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddActivity.storyboard; sourceTree = "<group>"; };
+		ED365C922182F69A00E05881 /* EditActivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditActivity.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +160,12 @@
 				BA5A70DE2091DC9500110EDA /* AppDelegate.swift */,
 				BA5A70E72091DC9600110EDA /* LaunchScreen.storyboard */,
 				BAB403E62098EB9500BF7D31 /* MC1.xcdatamodeld */,
+				ED365C882182F5F500E05881 /* Overview.storyboard */,
+				ED365C8A2182F61A00E05881 /* ActivityDetails.storyboard */,
+				ED365C8C2182F65500E05881 /* TaskDetails.storyboard */,
+				ED365C8E2182F65F00E05881 /* AddTask.storyboard */,
+				ED365C902182F68900E05881 /* AddActivity.storyboard */,
+				ED365C922182F69A00E05881 /* EditActivity.storyboard */,
 			);
 			path = MC1;
 			sourceTree = "<group>";
@@ -218,11 +236,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED365C8D2182F65500E05881 /* TaskDetails.storyboard in Resources */,
+				ED365C932182F69A00E05881 /* EditActivity.storyboard in Resources */,
+				ED365C8B2182F61A00E05881 /* ActivityDetails.storyboard in Resources */,
 				BA5A70E92091DC9600110EDA /* LaunchScreen.storyboard in Resources */,
+				ED365C8F2182F65F00E05881 /* AddTask.storyboard in Resources */,
 				BA5A70E62091DC9600110EDA /* Assets.xcassets in Resources */,
+				ED365C892182F5F500E05881 /* Overview.storyboard in Resources */,
 				BA5A70E42091DC9500110EDA /* Main.storyboard in Resources */,
 				2FD6F886218095880066B9EA /* Onboarding1.mp4 in Resources */,
 				2FD6F887218095880066B9EA /* Onboarding3.mp4 in Resources */,
+				ED365C912182F68900E05881 /* AddActivity.storyboard in Resources */,
 				2FD6F888218095880066B9EA /* Onboarding2.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
