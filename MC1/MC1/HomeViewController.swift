@@ -12,7 +12,7 @@ import CloudKit
 class HomeViewController: UIViewController {
     
     // MARK: - Outlets and Properties
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     var index = 0
     var activities: [Activity] = []
     
@@ -27,8 +27,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.delegate = self
-        tableView.dataSource = self
+        
         self.navigationController?.navigationBar.tintColor = UIColor.init(red: 57/255, green: 172/255, blue: 217/255, alpha: 1)
         self.initialConnectionCheck()
     }
@@ -102,7 +101,7 @@ class HomeViewController: UIViewController {
             }
             DispatchQueue.main.async {
                 self.sortActivities()
-                self.tableView.reloadData()
+                self.collectionView.reloadData()
             }
         }
     }
@@ -222,7 +221,36 @@ extension HomeViewController{
     }
 }
 
-
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return activities.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let activity = activities[indexPath.row]
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivityCell", for: indexPath) as! ActivityCollectionViewCell
+        
+        cell.layer.borderWidth = 10.0
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.cornerRadius = 20
+        
+        cell.setActivity(activity: activity)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if UIDevice.current.orientation.isLandscape
+        {
+            return CGSize(width: self.collectionView.frame.width/2-10, height: 30)
+        }
+        else
+        {
+            return CGSize(width: self.collectionView.frame.width/1-10, height: 30)
+        }
+    }
+}
 
 
 
@@ -273,18 +301,18 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
 extension HomeViewController: ActivityDataDelegate {
     func editActivity(activity: Activity, index: Int) {
         activities[index] = activity
-        tableView.reloadData()
+        collectionView.reloadData()
     }
     
     func addActivity(activity: Activity) {
         activities.append(activity)
         self.sortActivities()
         self.saveActivityToCK(addedActivity: activity)
-        tableView.reloadData()
+        collectionView.reloadData()
     }
     
     func deleteActivity(activity: Activity, index: Int) {
         activities.remove(at: index)
-        tableView.reloadData()
+        collectionView.reloadData()
     }
 }
